@@ -8,7 +8,7 @@ import { useTheme } from '../hooks/useTheme';
 import { useSearchParams } from 'react-router-dom';
 
 const ArticleListWithLoader = withLoader(ArticleList);
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 12;
 
 const Home = () => {
   const [category, setCategory] = useState('all');
@@ -33,7 +33,7 @@ const Home = () => {
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
+    <div className="transition-colors duration-300">
       {/* Navbar is now in App.jsx */}
       
       <main className="container mx-auto px-4 py-6 max-w-7xl">

@@ -14,8 +14,8 @@ const CategoryFilter = ({ currentCategory, onSelectCategory }) => {
             onClick={() => onSelectCategory(cat)}
             className={`px-5 py-2 rounded-full text-sm font-medium capitalize whitespace-nowrap transition-all duration-200 transform hover:scale-105 ${
               currentCategory === cat
-                ? "bg-blue-600 text-white shadow-md"
-                : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+                ? "bg-blue-600 text-white shadow-lg shadow-blue-500/30"
+                : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm"
             }`}
           >
             {cat}

@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import { ThemeContext } from './ThemeContext';
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme || 'dark';
+  });
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -11,6 +14,7 @@ export const ThemeProvider = ({ children }) => {
     } else {
       document.documentElement.classList.remove('dark');
     }
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
